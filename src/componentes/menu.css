@@ -1,0 +1,63 @@
+.menu{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: bisque;
+    text-decoration: none;
+}
+.letramenu{
+    font-size: 30px;
+    font-family: cursive;
+    color: rgb(255, 0, 234);
+    
+}
+.letranav{
+    text-decoration: none;
+    border: 5px solid bisque;
+    color: rgb(255, 0, 76);
+
+}
+.letracard{
+    font-size: 15px;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+a:hover{
+    color: rgb(255, 0, 234);
+}
+.cart{
+    color: black;
+}
+.ImageItenList{
+    width: 100px;
+    height: 50%;
+    margin-left: 30%;
+}
+.margen-d{
+    padding-left: 30%;
+    text-align: center;
+}
+.borde{
+    border: 2px solid rgb(255, 0, 234);
+}
+.conte-item{
+    width: 20%;
+    height: 20%;
+   margin: 10px;
+  
+}
+.conte-item2{
+    padding-top: 10px;
+    background: bisque;
+}
+.conte-item-list{
+    display: flex;
+    padding-top: 10px;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.img-detail{
+ width: 20%;
+ height: 20%;
+}
