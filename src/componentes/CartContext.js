@@ -33,6 +33,7 @@ const ContextCart = ({ children }) => {
     }
     const removeItem = (id) => {
         setProducts(products.filter(product => product.id !== id));
+      
     }
     const isInCart = (id) => {
         return products.some(products => products.id === id);

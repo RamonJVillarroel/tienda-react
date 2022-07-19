@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import './menu.css'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { cartContext } from "./CartContext";
@@ -6,14 +6,20 @@ import { cartContext } from "./CartContext";
 
 const CartWidget = () => {
   const { quantity } = useContext(cartContext)
-/*   const [mus, setMus]=useState(true) */
- 
+  /* const [mus, setMus] = useState(true)
+  useEffect(() => {
+    quantity > 0 ? setMus(false) : setMus(true);
+  }) */
   return (
     <>
-    {{quantity} >0 ?(<ShoppingCartIcon />):(<ShoppingCartIcon />,<p>{quantity}</p>)
-    
-    }
-
+     {/*  {mus ? (<ShoppingCartIcon />) :
+        <><ShoppingCartIcon />
+          <p>{quantity}</p></>
+      } */}
+  {
+  quantity>0 ?<><ShoppingCartIcon />
+  <p>{quantity}</p></> :<ShoppingCartIcon />
+  }
     </>
 
   )
