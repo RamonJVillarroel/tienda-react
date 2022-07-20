@@ -20,7 +20,8 @@ const CartWidget = () => {
   quantity>0 ?<><ShoppingCartIcon />
   <p>{quantity}</p></> :<ShoppingCartIcon />
   }
-    </>
+ 
+  </>
 
   )
 }
