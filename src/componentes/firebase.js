@@ -1,7 +1,5 @@
-
 import { initializeApp } from "firebase/app";
-import {getFirestore} from 'firebase/firestore';
-
+import { getFirestore } from "firebase/firestore";
 const firebaseConfig = {
   apiKey: "AIzaSyAlbzD2YVfWbqzntxxRGiw3DLO4_t7OcRM",
   authDomain: "la-tienda-villarroel.firebaseapp.com",
@@ -12,5 +10,6 @@ const firebaseConfig = {
   appId: "1:340351821049:web:ac49c0ee47f3e961132e28"
 };
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const bd = getFirestore(app);
