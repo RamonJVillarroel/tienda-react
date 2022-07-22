@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+/* estoy en la rama firebase--ramaprincipaol--proyecto */
 import ItemDetail from './ItemDetail';
 import { DotLoader } from 'react-spinners';
 import { useParams } from 'react-router-dom';
-
+import{bd} from './firebase';
+import { getDoc, where, collection, query } from 'firebase/firestore';
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -10,9 +12,10 @@ const ItemDetailContainer = () => {
 
   const { productId } = useParams();
   useEffect(() => {
-
+        
     const getitem = async () => {
       try {
+       
         const URL = productId
           ? `https://fakestoreapi.com/products/${productId}`
           : 'https://fakestoreapi.com/products';
