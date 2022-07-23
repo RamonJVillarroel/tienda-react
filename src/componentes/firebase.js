@@ -1,15 +1,16 @@
+
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
+
 const firebaseConfig = {
-  apiKey: "AIzaSyAlbzD2YVfWbqzntxxRGiw3DLO4_t7OcRM",
-  authDomain: "la-tienda-villarroel.firebaseapp.com",
-  databaseURL: "https://la-tienda-villarroel-default-rtdb.firebaseio.com",
-  projectId: "la-tienda-villarroel",
-  storageBucket: "la-tienda-villarroel.appspot.com",
-  messagingSenderId: "340351821049",
-  appId: "1:340351821049:web:ac49c0ee47f3e961132e28"
+  apiKey: "AIzaSyBUz9TpgH9Sh_Q858sVZ6cGPIRJ4C8oOLQ",
+  authDomain: "coder-react-6295a.firebaseapp.com",
+  projectId: "coder-react-6295a",
+  storageBucket: "coder-react-6295a.appspot.com",
+  messagingSenderId: "1017315309588",
+  appId: "1:1017315309588:web:774ee5ee98380a14c8cf01"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-export const bd = getFirestore(app);
+export const db = getFirestore(app);

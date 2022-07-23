@@ -1,49 +1,47 @@
 import React, { useState, useEffect } from 'react';
-/* import ItenCount from './ItemCount'; */
 import ItemList from './ItemList';
-/* import { DotLoader } from 'react-spinners'; */
-import {  useParams} from 'react-router-dom'
-import { bd } from './firebase';
-import { getDoc, where, collection, query } from 'firebase/firestore';
+import { DotLoader } from 'react-spinners';
+import { useParams } from 'react-router-dom'
+import { db } from './firebase';
+import { getDoc,collection, where,  query} from "firebase/firestore"
 const ItemLisContainer = () => {
     const [Products, setProducts] = useState([]);
     const [error, setError] = useState(false);
-    /* const [loading, setLoading] = useState(true); */
-     const {categoryId} = useParams();
+    const [loading, setLoading] = useState(true);
+    const { categoryId } = useParams();
     useEffect(() => {
-
+   
         const local = categoryId
-        ? query(collection(bd, 'productos'), where('category', '==', categoryId))
-        : collection(bd, 'productos');
-
+            ? query(collection(db, 'products'), where('category', '==', categoryId))
+            : collection(db, 'products');
+           
         getDoc(local)
-        .then(resultado => {
-            const resul = resultado.docs.map(doc => {
-                return {
-                    id: doc.id,
-                    ...doc.data(),
-                }
+            .then(resultado => {
+                const resul = resultado.docs.map(doc => {
+                    return {
+                        id: doc.id,
+                        ...doc.data(),
+                    }
+                })
+                setProducts(resul);
+                
             })
-            console.log(resul)
-            setProducts(resul)
-        })
-        .catch(err => setError(true));
-      /*   .finally(() => setLoading(false)); */
-    }, [categoryId])
+            .catch(() =>setError(true))
+            .finally(() => setLoading(false))
+    }, [categoryId]);
 
     return (
         <>
-            {/* loading ? (<div className='grid justify-items-center pt-9'><DotLoader color="#ff80e7" /></div>) : */
+            {loading ? (<div className='grid justify-items-center pt-9'><DotLoader color="#ff80e7" /></div>) :
                 error ? <h1>error</h1> :
                     <ItemList Products={Products} />
             }
 
-            {/*  <ItenCount stock={5} initial ={1} onAdd={onAdd}/>  */}
         </>
 
     )
 }
-
+export default ItemLisContainer
 /*  const productos = async () => {
    try {
         const URL = categoryId
@@ -68,4 +66,3 @@ productos();*/
  }; */
 
 
-export default ItemLisContainer
