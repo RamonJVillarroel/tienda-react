@@ -1,0 +1,26 @@
+.custon-form {
+    max-width: 70%;
+    margin-top: 20px;
+    border: 1px solid #d3cbcb;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, 0.2);
+    background-color: #f8f9fa;
+    margin-bottom: 20px;
+    margin-left: 230px;
+  }
+ 
+  .custon-form-button:focus {
+    outline: none;
+  }
+  .custon-form-title {
+    text-align: center;
+    font-size: 1.7rem;
+    margin: 20px;
+    font-weight: bold;
+  }
+  .custon-form-error {
+    color: red;
+    font-weight: bold;
+    padding-top: 10px;
+  }

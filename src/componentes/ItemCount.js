@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const ItenCount = ({ stock, initial, onAdd }) => {
     const [suma, setSuma] = useState(initial)
-   
+
     const cuenta = () => {
         if (suma < stock) {
             setSuma(suma + 1);
@@ -11,7 +11,7 @@ const ItenCount = ({ stock, initial, onAdd }) => {
             alert("no puede agregar mas productos ")
         }
     }
-    const  handlerClickagregar =()=>{
+    const handlerClickagregar = () => {
         onAdd(suma)
     }
 
@@ -25,12 +25,12 @@ const ItenCount = ({ stock, initial, onAdd }) => {
 
     return (
         <>
-            <div className='  grid justify-items-center '>
-                <p className='text-xl px-10  bg-red-700 py-5'>{suma}</p>
-                <div className='flex '>
-                    <button className='bg-red-200 hover:bg-red-700 text-xl py-5 px-10' onClick={resta}>-</button>
-                  <button className='bg-red-200 hover:bg-red-700 text-xl py-5 px-10'  onClick={() => handlerClickagregar()}>agregar</button> 
-                    <button className='bg-red-200 hover:bg-red-700 text-xl py-5 px-10' onClick={cuenta}>+</button>
+            <div className='grid justify-items-center'>
+                <div className='mt-10 w-full bg-zinc-600 rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2 '>{suma}</div>
+                <div className=' flex mt-5 '>
+                    <button className=' w-full bg-zinc-600   rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-emerald-300 focus:outline-none focus:ring-2 focus:ring-offset-2 ' onClick={resta}>-</button>
+                    <button className=' w-full bg-zinc-600  rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-emerald-300 focus:outline-none focus:ring-2 focus:ring-offset-2 ' onClick={() => handlerClickagregar()}>agregar</button>
+                    <button className='  w-full bg-zinc-600 rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-emerald-300 focus:outline-none focus:ring-2 focus:ring-offset-2 ' onClick={cuenta}>+</button>
                 </div>
             </div>
         </>

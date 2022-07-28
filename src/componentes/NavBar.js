@@ -1,5 +1,5 @@
 import React from 'react';
-import './menu.css'
+import './style.css'
 import CartWidget from './CartWidget'
 import { Link, NavLink } from 'react-router-dom';
 
@@ -13,10 +13,10 @@ const NavBar = () => {
     ];
     return (
         <header>
-            <div className='menu'>
-                <Link to="/"><h1 className='letramenu'>La Tiendita</h1></Link>
-                {categories.map((category) => <NavLink key={category.id} className="letranav" to={category.route}>{category.name}</NavLink>)}
-                <Link to="/Carrito" className='letranav'><CartWidget /></Link>
+            <div className='menu bg-neutral-700'>
+                <Link to="/"><h1 className='letramenu text-teal-400 '>La Tiendita</h1></Link>
+                {categories.map((category) => <NavLink key={category.id} className="letranav text-teal-400" to={category.route}>{category.name}</NavLink>)}
+                <Link to="/Carrito" className=' text-teal-400'><CartWidget /></Link>
 
             </div>
         </header>

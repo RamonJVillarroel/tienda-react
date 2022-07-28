@@ -1,9 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import './menu.css'
+import './style.css'
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 
@@ -14,9 +13,9 @@ const Item = ({ Products }) => {
                 <CardActionArea>
                     <CardContent>
                         <Link className='text-center' to={`/product/${Products.id}`}>
-                            <CardMedia className='conte-item2'>
-                                <img src={Products.image} className='ImageItenList' alt='producto-detalle' />
-                            </CardMedia>
+                            <div className='bg-red h-56 w-44 flex justify-center items-center'>
+                                <img src={Products.image} className='object-cover object-center w-full h-56' alt='producto-detalle' />
+                            </div>
                             <CardContent className='conte-item2'>
                                 <Typography gutterBottom variant="h5" component="div">
                                     <h2 className='letracard'>{Products.title}</h2>

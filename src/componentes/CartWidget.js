@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import './menu.css'
+import './style.css'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { cartContext } from "./CartContext";
 

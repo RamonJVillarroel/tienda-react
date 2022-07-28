@@ -6,7 +6,6 @@ const { Provider } = cartContext;
 const ContextCart = ({ children }) => {
     const [products, setProducts] = useState([])
     const [quantity, setQuantity] = useState(0)
-
     const getQuantyti = () => {
         let qty = 0;
         products.forEach(product => {
