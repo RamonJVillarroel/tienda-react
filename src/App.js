@@ -1,12 +1,12 @@
 import React from 'react';
-import NavBar from '../src/componentes/NavBar'
-import ItemLisContainer from '../src/componentes/ItemsListContainer'
+import NavBar from './componentes/header/NavBar'
+import ItemLisContainer from './componentes/containers/containerList/ItemsListContainer'
 import './App.css';
-import ItemDetailContainer from '../src/componentes/ItemDetailContainer';
+import ItemDetailContainer from './componentes/containers/containerList/containerDetail/ItemDetailContainer';
 import { BrowserRouter, Routes, Route, } from "react-router-dom";
-import Cart from './componentes/Cart';
-import ContextCart from './componentes/CartContext';
-import  ContainerFinish from './componentes/ContainerFinish'
+import Cart from './componentes/containerFinish/Cart';
+import ContextCart from './componentes/contextt/CartContext';
+import  ContainerFinish from './componentes/containerFinish/ContainerFinish'
 function App() {
   return (
     <BrowserRouter>

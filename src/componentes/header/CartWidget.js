@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import './style.css'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import { cartContext } from "./CartContext";
+import { cartContext } from "../contextt/CartContext";
 
 
 const CartWidget = () => {

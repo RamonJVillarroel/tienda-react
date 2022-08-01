@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ItemDetail from './ItemDetail';
 import { DotLoader } from 'react-spinners';
 import { useParams } from 'react-router-dom';
-import{db} from './firebase';
+import{db} from '../../../firebasee/firebase';
 import { getDoc, collection, doc } from 'firebase/firestore';
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState([]);

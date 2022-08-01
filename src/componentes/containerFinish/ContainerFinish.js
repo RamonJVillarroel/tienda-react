@@ -1,8 +1,8 @@
 import { useState, useContext } from "react";
 import "./confin.css";
-import{db} from './firebase';
+import{db} from '../firebasee/firebase';
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
-import { cartContext } from "./CartContext";
+import { cartContext } from "../contextt/CartContext";
 
 const ContainerFinish = () => {
   const {products} = useContext(cartContext);
