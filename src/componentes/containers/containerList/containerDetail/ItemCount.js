@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-
+import Swal from 'sweetalert2'
 const ItenCount = ({ stock, initial, onAdd }) => {
+
     const [suma, setSuma] = useState(initial)
 
     const cuenta = () => {
@@ -8,7 +9,12 @@ const ItenCount = ({ stock, initial, onAdd }) => {
             setSuma(suma + 1);
         }
         else {
-            alert("no puede agregar mas productos ")
+            Swal.fire({
+                title: 'USTED NO PUEDE AGREGAR MAS PRODUCTOS',
+                icon: 'warning',
+                showConfirmButton: false,
+                timer: 1500,
+            })   
         }
     }
     const handlerClickagregar = () => {
@@ -17,12 +23,16 @@ const ItenCount = ({ stock, initial, onAdd }) => {
 
     const resta = () => {
         if (suma <= initial) {
-            alert("tiene que tener al un  menos productos")
+            Swal.fire({
+                title: 'USTED TIENE QUE TENER AL MENOS UN PRODUCTO',
+                icon: 'warning',
+                showConfirmButton: false,
+                timer: 2000,
+            })
         } else {
             setSuma(suma - 1);
         }
     }
-
     return (
         <>
             <div className='grid justify-items-center'>

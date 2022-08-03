@@ -5,7 +5,7 @@ import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import { cartContext } from "../contextt/CartContext";
 
 const ContainerFinish = () => {
-  const {products} = useContext(cartContext);
+  const {products,  clear} = useContext(cartContext);
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
@@ -48,7 +48,7 @@ const ContainerFinish = () => {
       return;
     }
     if (email.trim() !== email2.trim()) {
-      setError("  Los email son diferentes");
+      setError("Los email son diferentes");
       return;
     }
     setError("");
@@ -71,7 +71,7 @@ const ContainerFinish = () => {
   
 
   return (
-  <> {full?      (<><h1 className="custon-form-title">
+  <> {full? (<><h1 className="custon-form-title">
         Ingrese sus datos para finalizar el pedido
       </h1>
       <div className=" custon-form ">
@@ -81,7 +81,7 @@ const ContainerFinish = () => {
           </label>
           <input
             type="text"
-            className="form-control"
+            className="form-input mt-1 block w-full"
             id="name"
             value={name}
             onChange={handleNameChange}
@@ -93,7 +93,7 @@ const ContainerFinish = () => {
           </label>
           <input
             type="text"
-            className="form-control"
+            className="form-input mt-1 block w-full"
             id="phone"
             value={phone}
             onChange={handlePhoneChange}
@@ -105,7 +105,7 @@ const ContainerFinish = () => {
           </label>
           <input
             type="text"
-            className="form-control"
+            className="form-input mt-1 block w-full"
             id="email"
             value={email}
             onChange={handleEmailChange}
@@ -117,7 +117,7 @@ const ContainerFinish = () => {
           </label>
           <input
             type="text"
-            className="form-control"
+            className="form-input mt-1 block w-full"
             id="email2"
             value={email2}
             onChange={handleEmail2Change}
@@ -125,12 +125,16 @@ const ContainerFinish = () => {
         </div>
         <div className="col-12 text-right">
           <div className="custon-form-error">{error}</div>
-         <button className="mt-10 w-full bg-zinc-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-emerald-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" onClick={validar}>
+         <button className="mt-10 w-full bg-zinc-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-emerald-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" onClick={validar } >
             Finalizar Compra
           </button>
         </div>
-      </div></>):<><div>
-        <p>Gracias por su compra su codigo es: {idventa}</p></div></>
+      </div></>):<>
+      <div className='m-40 pt-6 pb-6 text-center  bg-zinc-600'><div className=' text-white text-2xl'>Gracias por su compra su codigo es: ( {idventa} )  
+      Por favor comunicate con nosotros.
+      </div></div>
+      <div>
+        </div></>
    }</>
 
      

@@ -6,10 +6,10 @@ import { Link } from 'react-router-dom'
 
 const Cart = () => {
   const [open, setOpen] = useState(true)
-  const { products, quantity, removeItem, clear } = useContext(cartContext)
+  const { products, removeItem, clear, montoTotal } = useContext(cartContext)
   return (
     <>  {products.length === 0 ?
-      <>  <h1>debes agregar productos <Link to="/">ingresa aqui</Link></h1></> :
+      <>   <div className='m-40 pt-6 pb-6 text-center  bg-zinc-600'><div className=' text-white text-2xl'>Debes agregar productos <Link to="/">ingresa aqui</Link></div></div></> :
       <> {products.map(product => <div key={product.id}>
         <Transition.Root show={open} as={Fragment}>
           <Dialog as="div" className="relative z-10 " onClose={setOpen}>
@@ -24,9 +24,7 @@ const Cart = () => {
             >
               <div className="fixed inset-0 transition-opacity" />
             </Transition.Child>
-
             <div className="fixed  overflow-hidden ">
-
               <div className="fixed  right-0 flex inset-y-0 pl-10">
                 <Transition.Child
                   as={Fragment}
@@ -53,10 +51,9 @@ const Cart = () => {
                             </button>
                           </div>
                         </div>
-
                         <div className="mt-8 ">
                           <div className="flow-root ">
-                            <ul  className="-my-6 divide-y divide-gray-200 ">
+                            <ul className="-my-6 divide-y divide-gray-200 ">
                               {products.map((product) => (
                                 <li key={product.id} className="flex py-6 ">
                                   <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
@@ -66,24 +63,23 @@ const Cart = () => {
                                       className="h-full w-full object-cover object-center"
                                     />
                                   </div>
-
                                   <div className="ml-4 flex flex-1 flex-col">
                                     <div>
                                       <div className="flex justify-between text-base font-medium text-gray-900">
                                         <h3>
                                           <p>{product.title}</p>
                                         </h3>
-                                        <p className="ml-4">{product.price*quantity}</p>
+                                        <p className="ml-4">Precio: {product.price}</p>
                                       </div>
                                     </div>
                                     <div className="flex flex-1 items-end justify-between text-sm">
-                                      <p className="text-gray-500">{quantity}</p>
+                                      <p className="text-gray-500">Cantidad: {product.qty}</p>
 
                                       <div className="flex">
                                         <button
                                           type="button"
                                           className="font-medium  hover:text-emerald-300"
-                                          
+                                          onClick={removeItem}
                                         >
                                           Eliminar
                                         </button>
@@ -96,16 +92,15 @@ const Cart = () => {
                           </div>
                         </div>
                       </div>
-
                       <div className="border-t border-gray-200 py-6 px-4 sm:px-6">
                         <div className="flex justify-between text-base font-medium text-gray-900">
-                          <p>Total</p>
-                          <p>{product.price*quantity}</p>
+                          <p>Total:</p>
+                          <p>{montoTotal}</p>
                         </div>
-                        <p className="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
+                        <p className="mt-0.5 text-sm text-gray-500">Envío e impuestos ya incluidos.</p>
                         <div className="mt-6">
-                    <Link to="/ContainerFinish"><button className=' w-full bg-zinc-600   rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-emerald-300 focus:outline-none focus:ring-2 focus:ring-offset-2 ' >
-                          Terminar Compra
+                          <Link to="/ContainerFinish"><button className=' w-full bg-zinc-600   rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-emerald-300 focus:outline-none focus:ring-2 focus:ring-offset-2 ' >
+                            Terminar Compra
                           </button></Link>
                         </div>
                         <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
@@ -120,7 +115,7 @@ const Cart = () => {
                             className="font-medium  hover:text-emerald-300"
                             onClick={clear}
                           >
-                            eliminar todo
+                            Eliminar todo el carrito
                           </button>
                         </div>
                       </div>
@@ -128,17 +123,12 @@ const Cart = () => {
                   </Dialog.Panel>
                 </Transition.Child>
               </div>
-
             </div>
           </ Dialog >
         </Transition.Root>
-
       </div>)}
-
       </>}
-
     </>
   )
 }
 export default Cart
-  /*  total = total + Producto.precio * Producto.cantidad; */

@@ -27,8 +27,7 @@ const ItemDetailContainer = () => {
     <>
       {loading ? (<div className='grid justify-items-center pt-9 '><DotLoader color="rgb(20 184 166)" /></div>) :
         error ? <h1>error</h1> : 
-          <ItemDetail Producto={product}  />}
-     
+          <ItemDetail Producto={product}/>}
     </>
   )
 }

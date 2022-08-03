@@ -33,7 +33,7 @@ const ItemLisContainer = () => {
     return (
         <>
             {loading ? (<div className='grid justify-items-center pt-9 '><DotLoader color="rgb(20 184 166)" /></div>) :
-                error ? <h1>error</h1> :
+                error ? <div className='m-40 pt-6 pb-6 text-center  bg-zinc-600'><div className=' text-white text-2xl'>Error</div></div> :
                     <ItemList Products={Products} />
             }
 
